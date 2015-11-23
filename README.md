@@ -1,2 +1,2 @@
 # Django-workshop
-learn how to use Djange
+learn how to use Django
