@@ -58,3 +58,5 @@ This will rise a nano file, just uncomment the line and modify it.
 At last:
 
 >git push origin master
+
+## 3. Use Bootstrap in Django
