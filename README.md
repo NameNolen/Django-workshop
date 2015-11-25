@@ -19,4 +19,8 @@ Useful Github command: [Git_Help](/Git_Help.md)
 
 - Don't repeat yourself: use `{% extends "base.html" %}` and `{% block content %}{% endblock %}`.
 
+## TODO
+
+__We need make a schedule and set a target.__
+
 
