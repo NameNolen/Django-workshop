@@ -6,8 +6,8 @@ This project is for learning Django.
 
 Build a site following the steps in Django's document.
 
-[Official Manual](https://docs.djangoproject.com/en/1.8/) 
-[中文文档(1.8.2)](http://python.usyiyi.cn/django/index.html)
+- [Official Manual](https://docs.djangoproject.com/en/1.8/) 
+- [中文文档(1.8.2)](http://python.usyiyi.cn/django/index.html)
 
 ## 2. Collaborate with other through github.com
 
