@@ -1,12 +1,12 @@
 Generate ssh key:
 
-> ssh-keygen -C 'your@email.address' -t rsa
+`ssh-keygen -C 'your@email.address' -t rsa`
 
 Put the obtained id_rsa.pub into your github setting.
 
 Verify the key:
 
-> ssh -T git@github.com
+`ssh -T git@github.com`
 
 Clone this object:
 
