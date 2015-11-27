@@ -7,9 +7,13 @@
         <h2>
              <a href="{% url  'polls:detail' question.id %}">{{question.question_text}}</a>
          </h2>
+         
          <p class="lead">
              by <a href="#">Mrs. Right</a>
          </p>
+         {%autoescape off %}
+         <p>{{ question.content}}</p>
+         {% endautoescape %}
          <p><span class="glyphicon glyphicon-time"></span> Posted on November 25, 2015 at 10:45 PM</p>
          <hr>
          <img class="img-responsive" src="http://placehold.it/900x300" alt="">
