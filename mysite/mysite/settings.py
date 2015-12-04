@@ -38,8 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls',
     'ckeditor',
+    'ckeditor_uploader',
+    'polls',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,8 +103,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_ROOT="/home/chong/github/Django-workshop/mysite/static"
-
+MEDIA_ROOT="/home/chong/github/Django-workshop/mysite/media"
 
 STATIC_URL = '/static/'
+MEDIA_URL='/media/'
+
+CKEDITOR_UPLOAD_PATH="uploads/"
+
+
+CKEDITOR_JQUERY_URL='admin/js/jquery.min.js'
+
+
+CKEDITOR_CONFIGS={
+     'default':{
+         'toolbar':'full',
+         'height':300,
+         'width':750,
+         },
+}
+
 
 
