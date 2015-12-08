@@ -53,7 +53,7 @@ def vote(request,question_id):
 
 class QuestionCreate(CreateView):
 	model=Question
-	fields=['content']
+	fields=['question_text','content']
 	template_name='polls/addquestion.html'
 	def get_success_url(self):
 		return reverse('polls:index')
