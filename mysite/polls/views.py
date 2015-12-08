@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
 from django.utils import timezone
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 #from django.template import RequestContext,loader
 #from django.shortcuts import render
 from  .models import  Choice,Question
@@ -48,5 +49,18 @@ def vote(request,question_id):
 		#with POST data. This prevents data from being posted twice if a 
 		# user hits the Back button.
 		return HttpResponseRedirect(reverse('polls:results',args=(p.id,)))
+
+
+class QuestionCreate(CreateView):
+	model=Question
+	fields=['content']
+	template_name='polls/addquestion.html'
+	def get_success_url(self):
+		return reverse('polls:index')
+
+class QuestionUpdate(UpdateView):
+	model=Question
+	fields=['content']
+	template_name='polls/addquestion.html'
 	
 

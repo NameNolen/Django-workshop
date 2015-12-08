@@ -2,12 +2,14 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from ckeditor.fields import RichTextField
+from django.core.urlresolvers import   reverse
 from ckeditor_uploader.fields import RichTextUploadingField
+
 # Create your models here.
 class Question(models.Model):
 	content=RichTextUploadingField(blank=True)
 	question_text=models.CharField(max_length=200)
-	pub_date=models.DateTimeField('date published')
+	pub_date=models.DateTimeField('date published',auto_now=True)
 	def __unicode__(self):
 		return self.question_text
 	def was_published_recently(self):
@@ -22,6 +24,8 @@ class Choice(models.Model):
 	votes=models.IntegerField(default=0)
 	def __unicode__(self):
 		return  self.choice_text
+
+
     
     
     
