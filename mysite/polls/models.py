@@ -9,7 +9,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Question(models.Model):
 	content=RichTextUploadingField(blank=True)
 	question_text=models.CharField(max_length=200)
-	pub_date=models.DateTimeField('date published',auto_now=True)
+	pub_date=models.DateTimeField('date published', default=timezone.now)
 	def __unicode__(self):
 		return self.question_text
 	def was_published_recently(self):
