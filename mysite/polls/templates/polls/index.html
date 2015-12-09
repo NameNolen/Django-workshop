@@ -1,24 +1,21 @@
 {% extends "polls/base.html" %}
 {% block content%}
 
-{% if latest_question_list %}
+{% if latest_blog_list %}
      
-     {% for  question in latest_question_list %}
+     {% for  blog in latest_blog_list %}
         <h2>
-             <a href="{% url  'polls:detail' question.id %}">{{question.question_text}}</a>
+             <a href="{% url  'polls:detail' blog.id %}">{{blog.title}}</a>
          </h2>
          
          <p class="lead">
              by <a href="#">Mrs. Right</a>
          </p>
          {%autoescape off %}
-         <p>{{ question.content}}</p>
+         <p>{{ blog.content}}</p>
          {% endautoescape %}
          <p><span class="glyphicon glyphicon-time"></span> Posted on November 25, 2015 at 10:45 PM</p>
          <hr>
-         <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-         <hr>
-         <p>she is here .</p>
          <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
      {% endfor %}
     

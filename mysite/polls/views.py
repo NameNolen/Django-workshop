@@ -8,38 +8,38 @@ from django.utils import timezone
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 #from django.template import RequestContext,loader
 #from django.shortcuts import render
-from  .models import  Choice,Question
+from  .models import  Choice,Blog
  
 # Create your views here.
 class IndexView(generic.ListView):
 	template_name='polls/index.html'
-	context_object_name='latest_question_list'
+	context_object_name='latest_blog_list'
 	
 	def get_queryset(self):
-		"""Return the last five published question.(not including those set to  bo published in the future)."""
-		return Question.objects.filter(
-			pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
+		"""Return the last five published blog.(not including those set to  bo published in the future)."""
+		return  Blog.objects.filter(
+			pub_date__lte=timezone.now()).order_by('-pub_date')
 
 class DetailView(generic.DetailView):
-	model=Question
+	model=Blog
 	template_name='polls/detail.html'
 	def get_queryset(self):
 		"""
-		Excludes any questions that aren't published yet.
+		Excludes any blogs that aren't published yet.
 		"""
-		return Question.objects.filter(pub_date__lte=timezone.now())
+		return Blog.objects.filter(pub_date__lte=timezone.now())
 class ResultsView(generic.DetailView):
-	model=Question
+	model=Blog
 	template_name='polls/results.html'	
 	
-def vote(request,question_id):
-	p=get_object_or_404(Question,pk=question_id)
+def vote(request,blog_id):
+	p=get_object_or_404(Blog,pk=blog_id)
 	try:
 		selected_choice=p.choice_set.get(pk=request.POST['choice'])
 	except (KeyError,Choice.DoesNotExist):
-		#Redisplay the question voting form.
+		#Redisplay the blog voting form.
 		return render(request,'polls/detail.html',{
-			'question':p,
+			'blog':p,
 			'error_message':"You didn't seletc a choice.",
 		})
 	else:
@@ -51,16 +51,16 @@ def vote(request,question_id):
 		return HttpResponseRedirect(reverse('polls:results',args=(p.id,)))
 
 
-class QuestionCreate(CreateView):
-	model=Question
-	fields=['question_text','content']
-	template_name='polls/addquestion.html'
+class BlogCreate(CreateView):
+	model=Blog
+	fields=['title','content']
+	template_name='polls/addblog.html'
 	def get_success_url(self):
 		return reverse('polls:index')
 
-class QuestionUpdate(UpdateView):
-	model=Question
-	fields=['content']
-	template_name='polls/addquestion.html'
+class BlogUpdate(UpdateView):
+	model=Blog
+	fields=['title','content']
+	template_name='polls/addblog.html'
 	
 

@@ -114,12 +114,25 @@ CKEDITOR_UPLOAD_PATH="uploads/"
 CKEDITOR_JQUERY_URL='admin/js/jquery.min.js'
 
 
-CKEDITOR_CONFIGS={
-     'default':{
-         'toolbar':'full',
-         'height':300,
-         'width':750,
-         },
+CKEDITOR_CONFIGS= {
+    'default': {
+        'skin': 'moono',#'minimalist',#'bootstrapck',#'moono','flat','office2013',
+        'width': '100%',
+
+        'toolbar' : [
+            { 'name': 'document', 'items': [ 'Source' ] },
+            { 'name': 'clipboard', 'items': [  'Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'PasteText'] },
+
+            { 'name': 'basicstyles', 'items': [ 'Bold', 'Italic', 'Strike', '-', 'RemoveFormat' ] },
+            { 'name': 'paragraph', 'items': [ 'NumberedList', 'BulletedList', 'Blockquote' ] },
+            { 'name': 'links', 'items': [ 'Link', 'Unlink', 'Anchor'] },
+            #'/',
+            { 'name': 'insert', 'items': [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar' ] },
+            { 'name': 'styles', 'items': [ 'Styles', 'Format' ] },
+            { 'name': 'tools', 'items': [ 'Maximize' ] },
+        ],
+        #'filebrowserWindowWidth':'1280',
+    }
 }
 
 
