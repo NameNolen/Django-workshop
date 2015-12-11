@@ -3,13 +3,11 @@
 
 <form  method="post">
 {% csrf_token %}
-
-{{ form.media }}
-
 <input id="id_title" name="title" class="form-control input-lg" type="text" placeholder="title">
-<div class="form-group">	</div>
+<div class="form-group">
+{{ form.media }}
 {{ form.content }}
-
+</div>
 <button type="submit" class="btn btn-default">OK</button>
 </form>
 
