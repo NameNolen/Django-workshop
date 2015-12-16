@@ -48,7 +48,7 @@ def vote(request,blog_id):
 		#Always return an HttpResponseRedirect after successfully dealing
 		#with POST data. This prevents data from being posted twice if a 
 		# user hits the Back button.
-		return HttpResponseRedirect(reverse('polls:results',args=(p.id,)))
+		return HttpResponseRedirect(reverse('polls:results',args=(p.blog_id,)))
 
 
 class BlogCreate(CreateView):
@@ -56,7 +56,7 @@ class BlogCreate(CreateView):
 	fields=['title','content']
 	template_name='polls/addblog.html'
 	def get_success_url(self):
-		return reverse('polls:index')
+		return reverse('polls:detail',args=(self.object.id,))
 
 class BlogUpdate(UpdateView):
 	model=Blog

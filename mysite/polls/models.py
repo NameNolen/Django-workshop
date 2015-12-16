@@ -8,7 +8,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 class Blog(models.Model):
 	content=RichTextUploadingField(blank=True)
-	title=models.CharField(max_length=200)
+	title=models.CharField(max_length=200,unique=True)
 	pub_date=models.DateTimeField('date published', default=timezone.now)
 	def __unicode__(self):
 		return self.title

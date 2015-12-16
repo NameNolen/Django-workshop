@@ -12,7 +12,7 @@
              by <a href="#">Mrs. Right</a>
          </p>
          {%autoescape off %}
-         <p>{{ blog.content}}</p>
+         <p>{{ blog.content|truncatechars:200}}</p>
          {% endautoescape %}
          <p><span class="glyphicon glyphicon-time"></span> Posted on November 25, 2015 at 10:45 PM</p>
          <hr>
