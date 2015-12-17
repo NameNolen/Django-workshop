@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 from django.utils import timezone
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from django.core.urlresolvers import reverse_lazy
 #from django.template import RequestContext,loader
 #from django.shortcuts import render
 from  .models import  Choice,Blog
@@ -65,5 +66,10 @@ class BlogUpdate(UpdateView):
 	template_name='polls/update.html'
 	def get_success_url(self):
 		return reverse('polls:detail',args=(self.object.id,))
+
+class BlogDelete(DeleteView):
+	model=Blog
+	success_url=reverse_lazy('polls:index',)
+	
 
 

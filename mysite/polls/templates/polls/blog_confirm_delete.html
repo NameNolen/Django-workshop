@@ -1,0 +1,13 @@
+ {% extends "polls/base.html" %}
+{% block content%}
+
+<form action="" method="post">
+{% csrf_token %}
+<p>Are you sure you want to delete "{{ object }}"?</p>
+<button type="submit" class="btn btn-danger" >Confirm</button>
+<a class="btn btn-default"  href="{% url 'polls:detail' blog.id %}"  role="button">Cancel</a>
+<a class="btn btn-default"  href="javascript:history.back()"  role="button">Back</a>
+
+</form>
+
+{% endblock %}

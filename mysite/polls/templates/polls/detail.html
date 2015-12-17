@@ -10,4 +10,5 @@
 
 {% endautoescape %}
 <a class="btn btn-default"  href="{% url 'polls:BlogUpdate' blog.id %}"  role="button">Update</a>
+<a class="btn btn-danger"  href="{% url 'polls:BlogDelete' blog.id %}"  role="button">Delete</a>
 {% endblock %}
