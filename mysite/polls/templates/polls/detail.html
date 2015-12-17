@@ -9,5 +9,5 @@
 <p>{{ blog.content }}</p>
 
 {% endautoescape %}
-
+<a class="btn btn-default"  href="{% url 'polls:BlogUpdate' blog.id %}"  role="button">Update</a>
 {% endblock %}

@@ -28,6 +28,7 @@ class DetailView(generic.DetailView):
 		Excludes any blogs that aren't published yet.
 		"""
 		return Blog.objects.filter(pub_date__lte=timezone.now())
+
 class ResultsView(generic.DetailView):
 	model=Blog
 	template_name='polls/results.html'	
@@ -61,6 +62,8 @@ class BlogCreate(CreateView):
 class BlogUpdate(UpdateView):
 	model=Blog
 	fields=['title','content']
-	template_name='polls/addblog.html'
-	
+	template_name='polls/update.html'
+	def get_success_url(self):
+		return reverse('polls:detail',args=(self.object.id,))
+
 
