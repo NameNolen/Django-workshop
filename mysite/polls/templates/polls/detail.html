@@ -11,4 +11,10 @@
 {% endautoescape %}
 <a class="btn btn-default"  href="{% url 'polls:BlogUpdate' blog.id %}"  role="button">Update</a>
 <a class="btn btn-danger"  href="{% url 'polls:BlogDelete' blog.id %}"  role="button">Delete</a>
+<p></p>
+
+<ul class="nav nav-pills" role="tablist">
+  <li role="presentation" class="active"><a href="#">LOVE <span class="glyphicon glyphicon-heart-empty"> 42</span></a></li>
+  
+</ul>
 {% endblock %}
