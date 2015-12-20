@@ -12,4 +12,3 @@ urlpatterns=[
      url(r'^update/(?P<pk>[0-9]+)/$', views.BlogUpdate.as_view(), name='BlogUpdate'),
      url(r'^delete/(?P<pk>[0-9]+)/$',views.BlogDelete.as_view(),name='BlogDelete'),
   ]
-  

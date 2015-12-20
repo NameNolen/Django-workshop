@@ -5,7 +5,7 @@
      
      {% for  blog in latest_blog_list %}
         <h2>
-             <a href="{% url  'polls:detail' blog.id %}">{{blog.title}}</a>
+             <a href="">{{blog.title}}</a>
          </h2>
          
          <p class="lead">
@@ -16,7 +16,7 @@
          {% endautoescape %}
          <p><span class="glyphicon glyphicon-time"></span> Posted on November 25, 2015 at 10:45 PM</p>
          <hr>
-         <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+         <a class="btn btn-primary" href="{% url  'polls:detail' blog.id %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
      {% endfor %}
     
 {% else %}
